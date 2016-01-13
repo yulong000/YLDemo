@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "YLContentModel.h"
 
+#import "YLAnimationViewController.h"
+
 @interface ViewController () < UITableViewDataSource, UITableViewDelegate >
 
 @property (nonatomic, strong) NSArray *dataSource;
@@ -21,7 +23,8 @@
 {
     if(_dataSource == nil)
     {
-        _dataSource = @[];
+        YLContentModel *animation = [YLContentModel contentModelWithTitle:@"Animation" viewControllerName:@"YLAnimationViewController"];
+        _dataSource = @[animation];
     }
     return _dataSource;
 }
@@ -63,6 +66,16 @@
     cell.textLabel.text = model.title;
     cell.detailTextLabel.text = model.viewController;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    YLContentModel *model = self.dataSource[indexPath.row];
+    Class distanceVc = NSClassFromString(model.viewController);
+    UIViewController *vc = [[[distanceVc class] alloc] init];
+    vc.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 @end
