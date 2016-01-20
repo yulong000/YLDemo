@@ -10,6 +10,7 @@
 #import "YLContentModel.h"
 
 #import "YLAnimationViewController.h"
+#import "YLGCDTableViewController.h"
 
 @interface ViewController () < UITableViewDataSource, UITableViewDelegate >
 
@@ -24,7 +25,8 @@
     if(_dataSource == nil)
     {
         YLContentModel *animation = [YLContentModel contentModelWithTitle:@"Animation" viewControllerName:@"YLAnimationViewController"];
-        _dataSource = @[animation];
+        YLContentModel *GCD = [YLContentModel contentModelWithTitle:@"GCD" viewControllerName:@"YLGCDTableViewController"];
+        _dataSource = @[animation, GCD];
     }
     return _dataSource;
 }
@@ -56,7 +58,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"Cell";
+    static NSString *identifier = @"MainTableViewCellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if(cell == nil)
     {
