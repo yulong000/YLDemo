@@ -5,3 +5,10 @@
 
 
 * 1. Animation
+* 2. 多线程
+      * 1.多线程的创建方式
+          * 1.pthread
+          * 2.NSThread
+          * 3.GCD
+          * 4.NSOperation
+      * 2.信号量 semaphore
