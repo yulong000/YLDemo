@@ -10,7 +10,7 @@
 #import "YLContentModel.h"
 
 #import "YLAnimationViewController.h"
-#import "YLGCDTableViewController.h"
+#import "YLMultiThreadViewController.h"
 
 @interface ViewController () < UITableViewDataSource, UITableViewDelegate >
 
@@ -25,7 +25,7 @@
     if(_dataSource == nil)
     {
         YLContentModel *animation = [YLContentModel contentModelWithTitle:@"Animation" viewControllerName:@"YLAnimationViewController"];
-        YLContentModel *GCD = [YLContentModel contentModelWithTitle:@"GCD" viewControllerName:@"YLGCDTableViewController"];
+        YLContentModel *GCD = [YLContentModel contentModelWithTitle:@"多线程" viewControllerName:@"YLMultiThreadViewController"];
         _dataSource = @[animation, GCD];
     }
     return _dataSource;

@@ -20,7 +20,7 @@
     
     self.title = @"semaphore";
     
-    [self test2];
+    [self performSelectorInBackground:@selector(test) withObject:nil];
 }
 
 - (void)info
@@ -46,7 +46,7 @@
      所以当同时创建了10个线程之后，for循环就会阻塞，等待有线程结束之后会增加一个信号才继续执行，如此就形成了对并发的控制，就是一个并发数为10的一个线程队列。
      */
     dispatch_group_t group = dispatch_group_create();
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(10);
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     for (int i = 0; i < 100; i++)
     {

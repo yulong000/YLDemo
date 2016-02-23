@@ -18,8 +18,9 @@
 		003A91191C469EBF00DE2513 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A91161C469EBF00DE2513 /* AppDelegate.m */; };
 		003A91201C46A07A00DE2513 /* YLAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A911F1C46A07A00DE2513 /* YLAnimationViewController.m */; };
 		003A91261C46AA8700DE2513 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 003A91251C46AA8700DE2513 /* 1.png */; };
-		0061BFA91C4F72BE007565C5 /* YLGCDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061BFA81C4F72BE007565C5 /* YLGCDTableViewController.m */; };
-		0061BFAC1C4F7469007565C5 /* YLSemaphoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061BFAB1C4F7469007565C5 /* YLSemaphoreViewController.m */; };
+		00F048CF1C7716DC003D854F /* YLMultiThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F048CE1C7716DC003D854F /* YLMultiThreadViewController.m */; };
+		00F048D21C7719C7003D854F /* YLSemaphoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F048D11C7719C7003D854F /* YLSemaphoreViewController.m */; };
+		00F048D51C771A64003D854F /* YLThreadCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F048D41C771A64003D854F /* YLThreadCreateViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +62,12 @@
 		003A911E1C46A07A00DE2513 /* YLAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLAnimationViewController.h; path = Animation/controller/YLAnimationViewController.h; sourceTree = "<group>"; };
 		003A911F1C46A07A00DE2513 /* YLAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLAnimationViewController.m; path = Animation/controller/YLAnimationViewController.m; sourceTree = "<group>"; };
 		003A91251C46AA8700DE2513 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		0061BFA71C4F72BE007565C5 /* YLGCDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLGCDTableViewController.h; path = GCD/controller/YLGCDTableViewController.h; sourceTree = "<group>"; };
-		0061BFA81C4F72BE007565C5 /* YLGCDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLGCDTableViewController.m; path = GCD/controller/YLGCDTableViewController.m; sourceTree = "<group>"; };
-		0061BFAA1C4F7469007565C5 /* YLSemaphoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLSemaphoreViewController.h; path = GCD/controller/YLSemaphoreViewController.h; sourceTree = "<group>"; };
-		0061BFAB1C4F7469007565C5 /* YLSemaphoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLSemaphoreViewController.m; path = GCD/controller/YLSemaphoreViewController.m; sourceTree = "<group>"; };
+		00F048CD1C7716DC003D854F /* YLMultiThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLMultiThreadViewController.h; path = "多线程/controller/YLMultiThreadViewController.h"; sourceTree = "<group>"; };
+		00F048CE1C7716DC003D854F /* YLMultiThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLMultiThreadViewController.m; path = "多线程/controller/YLMultiThreadViewController.m"; sourceTree = "<group>"; };
+		00F048D01C7719C7003D854F /* YLSemaphoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLSemaphoreViewController.h; path = "多线程/controller/YLSemaphoreViewController.h"; sourceTree = "<group>"; };
+		00F048D11C7719C7003D854F /* YLSemaphoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLSemaphoreViewController.m; path = "多线程/controller/YLSemaphoreViewController.m"; sourceTree = "<group>"; };
+		00F048D31C771A64003D854F /* YLThreadCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLThreadCreateViewController.h; path = "多线程/controller/YLThreadCreateViewController.h"; sourceTree = "<group>"; };
+		00F048D41C771A64003D854F /* YLThreadCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLThreadCreateViewController.m; path = "多线程/controller/YLThreadCreateViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +158,7 @@
 		003A910C1C469EBF00DE2513 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0061BFA51C4F7230007565C5 /* GCD */,
+				00F048CB1C77163F003D854F /* 多线程 */,
 				003A911A1C469FE200DE2513 /* Animation */,
 				003A910D1C469EBF00DE2513 /* Main */,
 				003A91141C469EBF00DE2513 /* Other */,
@@ -202,8 +205,6 @@
 		003A911A1C469FE200DE2513 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				003A91211C46A09600DE2513 /* model */,
-				003A91221C46A09600DE2513 /* view */,
 				003A911D1C46A01500DE2513 /* controller */,
 			);
 			name = Animation;
@@ -218,22 +219,6 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
-		003A91211C46A09600DE2513 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = model;
-			path = Animation/model;
-			sourceTree = "<group>";
-		};
-		003A91221C46A09600DE2513 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = view;
-			path = Animation/view;
-			sourceTree = "<group>";
-		};
 		003A91241C46AA7D00DE2513 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,21 +227,23 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		0061BFA51C4F7230007565C5 /* GCD */ = {
+		00F048CB1C77163F003D854F /* 多线程 */ = {
 			isa = PBXGroup;
 			children = (
-				0061BFA61C4F7267007565C5 /* controller */,
+				00F048CC1C771652003D854F /* controller */,
 			);
-			name = GCD;
+			name = "多线程";
 			sourceTree = "<group>";
 		};
-		0061BFA61C4F7267007565C5 /* controller */ = {
+		00F048CC1C771652003D854F /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				0061BFA71C4F72BE007565C5 /* YLGCDTableViewController.h */,
-				0061BFA81C4F72BE007565C5 /* YLGCDTableViewController.m */,
-				0061BFAA1C4F7469007565C5 /* YLSemaphoreViewController.h */,
-				0061BFAB1C4F7469007565C5 /* YLSemaphoreViewController.m */,
+				00F048CD1C7716DC003D854F /* YLMultiThreadViewController.h */,
+				00F048CE1C7716DC003D854F /* YLMultiThreadViewController.m */,
+				00F048D31C771A64003D854F /* YLThreadCreateViewController.h */,
+				00F048D41C771A64003D854F /* YLThreadCreateViewController.m */,
+				00F048D01C7719C7003D854F /* YLSemaphoreViewController.h */,
+				00F048D11C7719C7003D854F /* YLSemaphoreViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -396,12 +383,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				003A91201C46A07A00DE2513 /* YLAnimationViewController.m in Sources */,
+				00F048D51C771A64003D854F /* YLThreadCreateViewController.m in Sources */,
 				003A91191C469EBF00DE2513 /* AppDelegate.m in Sources */,
 				003A91181C469EBF00DE2513 /* YLContentModel.m in Sources */,
 				003A91171C469EBF00DE2513 /* ViewController.m in Sources */,
-				0061BFAC1C4F7469007565C5 /* YLSemaphoreViewController.m in Sources */,
+				00F048D21C7719C7003D854F /* YLSemaphoreViewController.m in Sources */,
 				003A90D71C469D6100DE2513 /* main.m in Sources */,
-				0061BFA91C4F72BE007565C5 /* YLGCDTableViewController.m in Sources */,
+				00F048CF1C7716DC003D854F /* YLMultiThreadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
