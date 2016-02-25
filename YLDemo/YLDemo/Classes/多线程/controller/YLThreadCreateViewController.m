@@ -256,7 +256,7 @@ static unsigned int tickets = 20;
      2016-02-23 15:03:19.799 YLDemo[29282:12572099] <NSThread: 0x7f9ceb506be0>{number = 1, name = main}  -- 7
      2016-02-23 15:03:19.799 YLDemo[29282:12572099] <NSThread: 0x7f9ceb506be0>{number = 1, name = main}  -- 8
      2016-02-23 15:03:19.799 YLDemo[29282:12572099] <NSThread: 0x7f9ceb506be0>{number = 1, name = main}  -- 9
-     2016-02-23 15:03:19.799 YLDemo[29282:12572099] 结束
+     2016-02-23 15:03:19.799 YLDemo[29282:12572099] 完成
      
      */
 }
@@ -272,7 +272,7 @@ static unsigned int tickets = 20;
     
     NSLog(@"开始");
     
-    // 同步执行任务
+    // 异步执行任务
     for(int i = 0; i < 10; i++)
     {
         dispatch_async(queue, ^{
@@ -286,7 +286,7 @@ static unsigned int tickets = 20;
     /*
      
      2016-02-23 15:07:25.584 YLDemo[29333:12590667] 开始
-     2016-02-23 15:07:25.585 YLDemo[29333:12590667] 结束
+     2016-02-23 15:07:25.585 YLDemo[29333:12590667] 完成
      2016-02-23 15:07:25.585 YLDemo[29333:12591476] <NSThread: 0x7ff3bbea05f0>{number = 8, name = (null)}  -- 4
      2016-02-23 15:07:25.585 YLDemo[29333:12590991] <NSThread: 0x7ff3bda00b60>{number = 5, name = (null)}  -- 3
      2016-02-23 15:07:25.585 YLDemo[29333:12590992] <NSThread: 0x7ff3bd907bf0>{number = 3, name = (null)}  -- 1
@@ -561,6 +561,12 @@ static unsigned int tickets = 20;
         [NSThread sleepForTimeInterval:1.0];
     }];
     
+    // block 可以添加操作
+    [block addExecutionBlock:^{
+       
+        NSLog(@"blcok add execution -- %@", [NSThread currentThread]);
+    }];
+    
     // 添加依赖, 当invocation 执行完毕后, 再执行 blcok
     [block addDependency:invocation];
     
@@ -592,11 +598,12 @@ static unsigned int tickets = 20;
     
     /*
      
-     2016-02-23 22:00:14.502 YLDemo[31832:13026654] 完成
-     2016-02-23 22:00:14.502 YLDemo[31832:13026939] 第三种添加操作任务的方法 -- <NSThread: 0x7f8ee0f2e820>{number = 2, name = (null)}
-     2016-02-23 22:00:14.502 YLDemo[31832:13026963] invocation operation -- <NSThread: 0x7f8ee0c10c20>{number = 4, name = (null)}
-     2016-02-23 22:00:15.577 YLDemo[31832:13026963] blcok operation -- <NSThread: 0x7f8ee0c10c20>{number = 4, name = (null)}
-     2016-02-23 22:00:16.506 YLDemo[31832:13026654] <NSThread: 0x7f8ee0c05c70>{number = 1, name = main} -- 在主线程更新 UI
+     2016-02-25 22:40:45.647 YLDemo[37704:15491800] 完成
+     2016-02-25 22:40:45.648 YLDemo[37704:15491858] 第三种添加操作任务的方法 -- <NSThread: 0x7fd0196ab490>{number = 2, name = (null)}
+     2016-02-25 22:40:45.648 YLDemo[37704:15491849] invocation operation -- <NSThread: 0x7fd01952b5e0>{number = 3, name = (null)}
+     2016-02-25 22:40:46.720 YLDemo[37704:15491852] blcok operation -- <NSThread: 0x7fd019420ac0>{number = 4, name = (null)}
+     2016-02-25 22:40:46.720 YLDemo[37704:15491849] blcok add execution -- <NSThread: 0x7fd01952b5e0>{number = 3, name = (null)}
+     2016-02-25 22:40:47.649 YLDemo[37704:15491800] <NSThread: 0x7fd01a804eb0>{number = 1, name = main} -- 在主线程更新 UI
      
      */
 }
