@@ -37,6 +37,27 @@
     self.title = @"多线程";
 }
 
+#pragma mark 3D touch peek 后上滑出现的菜单
+- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+    
+    // 默认状态
+    UIPreviewAction *action1 = [UIPreviewAction actionWithTitle:@"default" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        NSLog(@"default");
+    }];
+    // 选中状态
+    UIPreviewAction *action2 = [UIPreviewAction actionWithTitle:@"selected" style:UIPreviewActionStyleSelected handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        NSLog(@"selected");
+    }];
+    // 毁灭状态
+    UIPreviewAction *action3 = [UIPreviewAction actionWithTitle:@"destructive" style:UIPreviewActionStyleDestructive handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        NSLog(@"destructive");
+    }];
+    
+    // action 组, 可以折叠一些 action
+    UIPreviewActionGroup *actionGroup = [UIPreviewActionGroup actionGroupWithTitle:@"more" style:UIPreviewActionStyleDefault actions:@[action1, action2, action3]];
+    return @[action1, action2, action3, actionGroup];
+}
+
 
 #pragma mark - Table view data source
 
