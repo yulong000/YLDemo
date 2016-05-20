@@ -12,3 +12,4 @@
           * 3.GCD
           * 4.NSOperation
       * 2.信号量 semaphore
+* 3. 增加 3D touch
