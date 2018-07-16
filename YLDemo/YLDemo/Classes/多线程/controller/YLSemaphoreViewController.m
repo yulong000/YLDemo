@@ -58,10 +58,12 @@
             dispatch_semaphore_signal(semaphore);
         });
     }
+    NSLog(@"wait");
     dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    NSLog(@"end");
 }
 
-- (void)test2   // 失败！！！
+- (void)test2
 {
     NSString *imageUrl = @"http://img2.imgtn.bdimg.com/it/u=2749032785,4112802673&fm=21&gp=0.jpg";
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
@@ -81,7 +83,7 @@
     }];
     
     [task resume];
-    dispatch_semaphore_wait(semaphore, 5);
+    dispatch_semaphore_wait(semaphore, dispatch_time(DISPATCH_TIME_NOW, 1 * 1000 * 1000 * 1000));
     
     NSLog(@"end");
 }
